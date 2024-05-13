@@ -19,7 +19,8 @@ vim.keymap.set({ "n", "v" }, "<leader>rc", [["rc]], { desc = "change to register
 vim.keymap.set("n", "<leader>rC", [["rC]], { desc = "Change to register" })
 vim.keymap.set({ "n", "v" }, "<leader>rd", [["rd]], { desc = "delete to register" })
 vim.keymap.set("n", "<leader>rD", [["rD]], { desc = "Delete to register" })
-vim.keymap.set("n", "<leader>rp", [["rp]], { desc = "paste from register" })
+vim.keymap.set({ "n", "v" }, "<leader>rp", [["rp]], { desc = "paste from register" })
+vim.keymap.set({ "n", "v" }, "<leader>rP", [["rP]], { desc = "Paste from register" })
 
 vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste and keep buffer" })
 
