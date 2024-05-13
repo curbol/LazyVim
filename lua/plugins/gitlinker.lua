@@ -5,6 +5,6 @@ return {
   },
   opts = {},
   keys = {
-    { "<leader>gy", desc = "Copy GitHub URL", mode = { "n", "v" } },
+    { mode = { "n", "v" }, "<leader>gy", desc = "Copy GitHub URL" },
   },
 }

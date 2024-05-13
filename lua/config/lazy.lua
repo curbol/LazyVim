@@ -15,6 +15,10 @@ require("lazy").setup({
     -- import any extras modules here
     -- Coding
     { import = "lazyvim.plugins.extras.coding.copilot" },
+    -- DAP
+    { import = "lazyvim.plugins.extras.dap.core" },
+    -- Editor
+    { import = "lazyvim.plugins.extras.editor.harpoon2" },
     -- Lang
     { import = "lazyvim.plugins.extras.lang.docker" },
     { import = "lazyvim.plugins.extras.lang.go" },
@@ -36,7 +40,7 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "tokyonight", "habamax" } },
+  install = { colorscheme = { "gruvbox-material", "habamax", "tokyonight" } },
   checker = { enabled = true }, -- automatically check for plugin updates
   performance = {
     rtp = {
