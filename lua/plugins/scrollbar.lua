@@ -3,7 +3,6 @@ return {
     "dstein64/nvim-scrollview",
     event = "BufRead",
     opts = {
-      winblend = 50,
       signs_on_startup = {
         "all",
         -- "conflicts",
@@ -17,6 +16,10 @@ return {
         -- "spell",
         -- "textwidth",
         -- "trail",
+      },
+      excluded_filetypes = {
+        "neo-tree",
+        "dashboard",
       },
     },
     config = true,
