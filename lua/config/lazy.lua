@@ -13,14 +13,20 @@ require("lazy").setup({
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
 
     -- import any extras modules here
-    -- Coding
-    { import = "lazyvim.plugins.extras.coding.copilot" },
+
     -- DAP
     { import = "lazyvim.plugins.extras.dap.core" },
+
+    -- Test
+    { import = "lazyvim.plugins.extras.test.core" },
+
+    -- Coding
+    { import = "lazyvim.plugins.extras.coding.copilot" },
+
     -- Editor
     { import = "lazyvim.plugins.extras.editor.harpoon2" },
+
     -- Lang
-    { import = "lazyvim.plugins.extras.lang.docker" },
     { import = "lazyvim.plugins.extras.lang.go" },
     { import = "lazyvim.plugins.extras.lang.json" },
     { import = "lazyvim.plugins.extras.lang.markdown" },
