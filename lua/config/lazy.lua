@@ -12,16 +12,16 @@ require("lazy").setup({
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
 
+    -- News: https://github.com/LazyVim/LazyVim/blob/main/NEWS.md
     -- import any extras modules here
+
+    -- Coding
+    { import = "lazyvim.plugins.extras.coding.mini-ai" },
+    { import = "lazyvim.plugins.extras.coding.mini-surround" },
+    { import = "lazyvim.plugins.extras.coding.copilot" },
 
     -- DAP
     { import = "lazyvim.plugins.extras.dap.core" },
-
-    -- Test
-    { import = "lazyvim.plugins.extras.test.core" },
-
-    -- Coding
-    { import = "lazyvim.plugins.extras.coding.copilot" },
 
     -- Editor
     { import = "lazyvim.plugins.extras.editor.harpoon2" },
@@ -33,6 +33,12 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.tailwind" },
     { import = "lazyvim.plugins.extras.lang.terraform" },
     { import = "lazyvim.plugins.extras.lang.typescript" },
+
+    -- Test
+    { import = "lazyvim.plugins.extras.test.core" },
+
+    -- UI
+    { import = "lazyvim.plugins.extras.ui.mini-indentscope" },
 
     -- import/override with your plugins
     { import = "plugins" },
