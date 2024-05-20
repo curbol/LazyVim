@@ -20,7 +20,7 @@ return {
       vim.g.gruvbox_material_transparent_background = 1
       -- vim.g.gruvbox_material_dim_inactive_windows = 0
       -- vim.g.gruvbox_material_visual = "grey background"
-      vim.g.gruvbox_material_menu_selection_background = "blue" -- 'grey', 'red', 'orange', 'yellow', 'green', 'aqua', 'blue', 'purple'
+      vim.g.gruvbox_material_menu_selection_background = "orange" -- 'grey', 'red', 'orange', 'yellow', 'green', 'aqua', 'blue', 'purple'
       -- vim.g.gruvbox_material_sign_column_background = "none"
       -- vim.g.gruvbox_material_spell_foreground = "none"
       -- vim.g.gruvbox_material_ui_contrast = "low"

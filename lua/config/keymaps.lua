@@ -25,3 +25,10 @@ vim.keymap.set({ "n", "v" }, "<leader>rP", [["rP]], { desc = "Paste from registe
 vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste and keep buffer" })
 
 vim.keymap.set("n", "<leader>w=", "<C-w>=", { desc = "Equalize windows" })
+
+vim.keymap.set(
+  "n",
+  "<leader>cs",
+  [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+  { desc = "Change all occurrences of word under cursor" }
+)

@@ -16,15 +16,16 @@ require("lazy").setup({
     -- import any extras modules here
 
     -- Coding
-    { import = "lazyvim.plugins.extras.coding.mini-ai" },
     { import = "lazyvim.plugins.extras.coding.mini-surround" },
     { import = "lazyvim.plugins.extras.coding.copilot" },
+    { import = "lazyvim.plugins.extras.coding.yanky" },
 
     -- DAP
     { import = "lazyvim.plugins.extras.dap.core" },
 
     -- Editor
     { import = "lazyvim.plugins.extras.editor.harpoon2" },
+    { import = "lazyvim.plugins.extras.editor.trouble-v3" },
 
     -- Lang
     { import = "lazyvim.plugins.extras.lang.go" },
@@ -33,6 +34,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.tailwind" },
     { import = "lazyvim.plugins.extras.lang.terraform" },
     { import = "lazyvim.plugins.extras.lang.typescript" },
+    { import = "lazyvim.plugins.extras.lang.yaml" },
 
     -- Test
     { import = "lazyvim.plugins.extras.test.core" },
