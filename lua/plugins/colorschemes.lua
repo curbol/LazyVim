@@ -26,7 +26,7 @@ return {
       -- vim.g.gruvbox_material_ui_contrast = "low"
       -- vim.g.gruvbox_material_show_eob = 1
       vim.g.gruvbox_material_float_style = "dim"
-      -- vim.g.gruvbox_material_diagnostic_text_highlight = 0
+      vim.g.gruvbox_material_diagnostic_text_highlight = 1
       -- vim.g.gruvbox_material_diagnostic_line_highlight = 0
       vim.g.gruvbox_material_diagnostic_virtual_text = "colored"
       vim.g.gruvbox_material_current_word = "underline" -- 'grey background', 'bold', 'underline', 'italic'
