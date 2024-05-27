@@ -32,3 +32,7 @@ vim.keymap.set(
   [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
   { desc = "Change all occurrences of word under cursor" }
 )
+
+-- Use <C-h> and <C-l> to navigate in command mode and insert mode (useful in naming dialogs)
+vim.keymap.set({ "c", "i" }, "<C-h>", "<Left>")
+vim.keymap.set({ "c", "i" }, "<C-l>", "<Right>")
