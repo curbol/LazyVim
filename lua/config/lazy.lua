@@ -26,7 +26,6 @@ require("lazy").setup({
     -- Editor
     { import = "lazyvim.plugins.extras.editor.dial" },
     { import = "lazyvim.plugins.extras.editor.harpoon2" },
-    { import = "lazyvim.plugins.extras.editor.trouble-v3" },
 
     -- Lang
     { import = "lazyvim.plugins.extras.lang.go" },
