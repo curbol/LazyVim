@@ -39,7 +39,7 @@ return {
         bg_dim = { "#32302f", "236" }, -- default: { "#1b1b1b", "233" }
       }
 
-      -- Set custom highlight for MsgArea
+      -- Set custom highlights
       vim.api.nvim_create_autocmd({ "ColorScheme", "VimEnter" }, {
         group = vim.api.nvim_create_augroup("Color", {}),
         pattern = "*",
@@ -52,7 +52,7 @@ return {
           vim.api.nvim_set_hl(0, "WinBarNC", { bg = "NONE", fg = "#7c6f64" })
           vim.api.nvim_set_hl(0, "WinBar", { bg = "NONE", fg = "#a89984" })
         end,
-        desc = "Set custom highlight for MsgArea",
+        desc = "Set custom highlights",
       })
     end,
   },
