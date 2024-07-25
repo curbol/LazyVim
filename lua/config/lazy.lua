@@ -17,7 +17,9 @@ require("lazy").setup({
 
     -- Coding
     { import = "lazyvim.plugins.extras.coding.mini-surround" },
+    { import = "lazyvim.plugins.extras.coding.copilot-chat" },
     { import = "lazyvim.plugins.extras.coding.copilot" },
+    { import = "lazyvim.plugins.extras.coding.neogen" },
     { import = "lazyvim.plugins.extras.coding.yanky" },
 
     -- DAP
@@ -53,6 +55,7 @@ require("lazy").setup({
 
     -- Util
     { import = "lazyvim.plugins.extras.util.dot" },
+    { import = "lazyvim.plugins.extras.util.octo" },
 
     -- import/override with your plugins
     { import = "plugins" },
