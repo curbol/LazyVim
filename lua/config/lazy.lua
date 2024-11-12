@@ -15,10 +15,13 @@ require("lazy").setup({
     -- News: https://github.com/LazyVim/LazyVim/blob/main/NEWS.md
     -- import any extras modules here
 
+    --AI
+    { import = "lazyvim.plugins.extras.ai.copilot-chat" },
+    { import = "lazyvim.plugins.extras.ai.copilot" },
+
     -- Coding
+    { import = "lazyvim.plugins.extras.coding.blink" },
     { import = "lazyvim.plugins.extras.coding.mini-surround" },
-    { import = "lazyvim.plugins.extras.coding.copilot-chat" },
-    { import = "lazyvim.plugins.extras.coding.copilot" },
     { import = "lazyvim.plugins.extras.coding.neogen" },
     { import = "lazyvim.plugins.extras.coding.yanky" },
 
@@ -28,6 +31,7 @@ require("lazy").setup({
     -- Editor
     { import = "lazyvim.plugins.extras.editor.harpoon2" },
     { import = "lazyvim.plugins.extras.editor.inc-rename" },
+    { import = "lazyvim.plugins.extras.editor.refactoring" },
 
     -- Lang
     { import = "lazyvim.plugins.extras.lang.clangd" },
@@ -50,9 +54,6 @@ require("lazy").setup({
 
     -- UI
     { import = "lazyvim.plugins.extras.ui.mini-indentscope" },
-
-    -- Util
-    { import = "lazyvim.plugins.extras.util.dot" },
 
     -- import/override with your plugins
     { import = "plugins" },
