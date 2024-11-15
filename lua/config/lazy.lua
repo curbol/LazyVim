@@ -13,6 +13,7 @@ require("lazy").setup({
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
 
     -- News: https://github.com/LazyVim/LazyVim/blob/main/NEWS.md
+    -- Extras Source: https://github.com/LazyVim/LazyVim/tree/main/lua/lazyvim/plugins/extras
     -- import any extras modules here
 
     --AI
