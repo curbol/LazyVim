@@ -5,7 +5,7 @@ return {
     opts.servers.gopls.settings.gopls.analyses.fieldalignment = false
 
     -- Add build flags for gopls to include integration and e2e tests so that diagnostics are shown
-    opts.servers.gopls.settings.gopls.buildFlags = { "-tags=integration,e2e" }
+    opts.servers.gopls.settings.gopls.buildFlags = { "-tags=integration,e2e,pact" }
 
     -- Disable inlay hints (input argument types)
     opts.inlay_hints.enabled = false
