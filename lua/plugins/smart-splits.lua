@@ -2,7 +2,7 @@ return {
   "mrjones2014/smart-splits.nvim",
   lazy = false,
   opts = {
-    ignored_filetypes = { "neo-tree" },
+    -- ignored_filetypes = { "neo-tree" },
   },
   keys = {
     -- Resizing
