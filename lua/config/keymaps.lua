@@ -14,9 +14,6 @@ vim.keymap.set("n", "N", "Nzzzv", { desc = "Previous Search Result and Center Cu
 -- Paste and keep buffer
 vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste and Keep Buffer" })
 
--- Window management
-vim.keymap.set("n", "<leader>w=", "<C-w>=", { desc = "Equalize Windows" })
-
 -- Change all occurrences of the word under the cursor
 vim.keymap.set(
   "n",
