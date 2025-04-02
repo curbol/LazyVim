@@ -1,3 +1,8 @@
 return {
-  -- { "echasnovski/mini.pairs", enabled = false },
+  {
+    "snacks.nvim",
+    opts = {
+      scroll = { enabled = false },
+    },
+  },
 }
