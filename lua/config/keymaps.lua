@@ -12,7 +12,7 @@ vim.keymap.set("n", "n", "nzzzv", { desc = "Next Search Result and Center Cursor
 vim.keymap.set("n", "N", "Nzzzv", { desc = "Previous Search Result and Center Cursor" })
 
 -- Paste and keep buffer
-vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste and Keep Buffer" })
+vim.keymap.set("x", "<leader>P", [["_dP]], { desc = "Paste and Keep Buffer" })
 
 -- Change all occurrences of the word under the cursor
 vim.keymap.set(
@@ -22,13 +22,20 @@ vim.keymap.set(
   { desc = "Change All Occurrences of Word Under Cursor" }
 )
 
+-- Change all occurrences of the visually selected text
+vim.keymap.set("v", "<leader>cs", [[:<C-u>%s/\V<C-r>"/<C-r>"/gI<Left><Left><Left>]], {
+  desc = "Change All Occurrences of Visually Selected Text",
+})
+
 -- Use <C-h> and <C-l> to navigate in command mode and insert mode
 vim.keymap.set({ "c", "i" }, "<C-h>", "<Left>", { desc = "Move Cursor Left" })
 vim.keymap.set({ "c", "i" }, "<C-l>", "<Right>", { desc = "Move Cursor Right" })
 
--- Clear unsaved buffer changes
-vim.keymap.set("n", "<leader>bx", ":e!<CR>", { desc = "Clear Unsaved Buffer Changes" })
+-- Save current buffer
+vim.keymap.set("n", "<leader>bs", "<cmd>update<CR>", { desc = "Buffer Save" })
 
--- Add lines
-vim.keymap.set("n", "<leader>o", "o<esc>", { desc = "Add Line Below" })
-vim.keymap.set("n", "<leader>O", "O<esc>", { desc = "Add Line Above" })
+-- Save all buffers
+vim.keymap.set("n", "<leader>ba", "<cmd>wall<CR>", { desc = "Buffer Save All" })
+
+-- Clear unsaved buffer changes
+vim.keymap.set("n", "<leader>bz", ":e!<CR>", { desc = "Clear Unsaved Buffer Changes" })
