@@ -11,9 +11,6 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll Up and Center Cursor" }
 vim.keymap.set("n", "n", "nzzzv", { desc = "Next Search Result and Center Cursor" })
 vim.keymap.set("n", "N", "Nzzzv", { desc = "Previous Search Result and Center Cursor" })
 
--- Paste and keep buffer
-vim.keymap.set("x", "<leader>P", [["_dP]], { desc = "Paste and Keep Buffer" })
-
 -- Change all occurrences of the word under the cursor
 vim.keymap.set(
   "n",
