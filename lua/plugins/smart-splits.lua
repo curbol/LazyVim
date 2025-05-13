@@ -1,7 +1,8 @@
 return {
-  { -- Using this for navigation from nvim->wezterm because smart-splits is really laggy for some reason.
+  { -- FIX: Using this for navigation from nvim->wezterm because smart-splits is really laggy for some reason.
     "letieu/wezterm-move.nvim",
-    keys = { -- Lazy loading, don't need call setup() function
+    keys = {
+      -- Navigation (Vim keys)
       {
         "<C-h>",
         function()
@@ -26,16 +27,44 @@ return {
           require("wezterm-move").move("l")
         end,
       },
+
+      -- Navigation (Arrow keys)
+      {
+        "<C-Left>",
+        function()
+          require("wezterm-move").move("h")
+        end,
+        desc = "Wezterm move left (arrow)",
+      },
+      {
+        "<C-Down>",
+        function()
+          require("wezterm-move").move("j")
+        end,
+        desc = "Wezterm move down (arrow)",
+      },
+      {
+        "<C-Up>",
+        function()
+          require("wezterm-move").move("k")
+        end,
+        desc = "Wezterm move up (arrow)",
+      },
+      {
+        "<C-Right>",
+        function()
+          require("wezterm-move").move("l")
+        end,
+        desc = "Wezterm move right (arrow)",
+      },
     },
   },
   {
     "mrjones2014/smart-splits.nvim",
     lazy = false,
-    opts = {
-      -- ignored_filetypes = { "neo-tree" },
-    },
+    opts = {},
     keys = {
-      -- Resizing
+      -- Resizing (Vim keys)
       {
         "<A-h>",
         function()
@@ -65,44 +94,37 @@ return {
         desc = "Smart-splits: resize right",
       },
 
-      -- Moving between splits. Smart-splits is really laggy for this case. Maybe it will be fixed in the future.
-      -- {
-      --   "<C-h>",
-      --   function()
-      --     require("smart-splits").move_cursor_left()
-      --   end,
-      --   desc = "Smart-splits: move left",
-      -- },
-      -- {
-      --   "<C-j>",
-      --   function()
-      --     require("smart-splits").move_cursor_down()
-      --   end,
-      --   desc = "Smart-splits: move down",
-      -- },
-      -- {
-      --   "<C-k>",
-      --   function()
-      --     require("smart-splits").move_cursor_up()
-      --   end,
-      --   desc = "Smart-splits: move up",
-      -- },
-      -- {
-      --   "<C-l>",
-      --   function()
-      --     require("smart-splits").move_cursor_right()
-      --   end,
-      --   desc = "Smart-splits: move right",
-      -- },
-      -- {
-      --   "<C-\\>",
-      --   function()
-      --     require("smart-splits").move_cursor_previous()
-      --   end,
-      --   desc = "Smart-splits: move previous split",
-      -- },
+      -- Resizing (Arrow keys)
+      {
+        "<A-Left>",
+        function()
+          require("smart-splits").resize_left()
+        end,
+        desc = "Smart-splits: resize left (arrow)",
+      },
+      {
+        "<A-Down>",
+        function()
+          require("smart-splits").resize_down()
+        end,
+        desc = "Smart-splits: resize down (arrow)",
+      },
+      {
+        "<A-Up>",
+        function()
+          require("smart-splits").resize_up()
+        end,
+        desc = "Smart-splits: resize up (arrow)",
+      },
+      {
+        "<A-Right>",
+        function()
+          require("smart-splits").resize_right()
+        end,
+        desc = "Smart-splits: resize right (arrow)",
+      },
 
-      -- Swapping buffers
+      -- Swapping buffers (Vim keys)
       {
         "<leader><leader>h",
         function()
@@ -130,6 +152,36 @@ return {
           require("smart-splits").swap_buf_right()
         end,
         desc = "Smart-splits: swap buf right",
+      },
+
+      -- Swapping buffers (Arrow keys)
+      {
+        "<leader><leader><Left>",
+        function()
+          require("smart-splits").swap_buf_left()
+        end,
+        desc = "Smart-splits: swap buf left (arrow)",
+      },
+      {
+        "<leader><leader><Down>",
+        function()
+          require("smart-splits").swap_buf_down()
+        end,
+        desc = "Smart-splits: swap buf down (arrow)",
+      },
+      {
+        "<leader><leader><Up>",
+        function()
+          require("smart-splits").swap_buf_up()
+        end,
+        desc = "Smart-splits: swap buf up (arrow)",
+      },
+      {
+        "<leader><leader><Right>",
+        function()
+          require("smart-splits").swap_buf_right()
+        end,
+        desc = "Smart-splits: swap buf right (arrow)",
       },
     },
   },
