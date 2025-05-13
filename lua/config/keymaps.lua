@@ -36,3 +36,10 @@ vim.keymap.set("n", "<leader>ba", "<cmd>wall<CR>", { desc = "Buffer Save All" })
 
 -- Clear unsaved buffer changes
 vim.keymap.set("n", "<leader>bz", ":e!<CR>", { desc = "Clear Unsaved Buffer Changes" })
+
+-- Search the directory of the current buffer
+vim.keymap.set("n", "<leader>sG", function()
+  require("telescope.builtin").live_grep({
+    search_dirs = { vim.fn.expand("%:p:h") },
+  })
+end, { desc = "Grep (Buffer Dir)" })
