@@ -3,11 +3,11 @@ return {
   event = "VeryLazy",
   opts = {
     mappings = {
-      -- Move visual selection in Visual mode. Defaults are Alt (Meta) + hjkl.
-      left = "<M-h>",
-      right = "<M-l>",
-      down = "<M-j>",
-      up = "<M-k>",
+      -- Move visual selection in Visual mode. Defaults are Alt + hjkl.
+      left = "<M-Left>",
+      right = "<M-Right>",
+      down = "<M-Down>",
+      up = "<M-Up>",
 
       -- Move current line in Normal mode
       line_left = "",
@@ -17,9 +17,9 @@ return {
     },
   },
   keys = {
-    { mode = { "v" }, "<M-h>", desc = "Move selection left" },
-    { mode = { "v" }, "<M-j>", desc = "Move selection down" },
-    { mode = { "v" }, "<M-k>", desc = "Move selection up" },
-    { mode = { "v" }, "<M-l>", desc = "Move selection right" },
+    { mode = { "v" }, "<M-Left>", desc = "Move selection left" },
+    { mode = { "v" }, "<M-Right>", desc = "Move selection down" },
+    { mode = { "v" }, "<M-Down>", desc = "Move selection up" },
+    { mode = { "v" }, "<M-Up>", desc = "Move selection right" },
   },
 }

@@ -28,11 +28,8 @@ vim.keymap.set("v", "<leader>cs", [[:<C-u>%s/\V<C-r>"/<C-r>"/gI<Left><Left><Left
 vim.keymap.set({ "c", "i" }, "<C-h>", "<Left>", { desc = "Move Cursor Left" })
 vim.keymap.set({ "c", "i" }, "<C-l>", "<Right>", { desc = "Move Cursor Right" })
 
--- Save current buffer
-vim.keymap.set("n", "<leader>bs", "<cmd>update<CR>", { desc = "Buffer Save" })
-
 -- Save all buffers
-vim.keymap.set("n", "<leader>ba", "<cmd>wall<CR>", { desc = "Buffer Save All" })
+vim.keymap.set("n", "<leader>bs", "<cmd>wall<CR>", { desc = "Buffer Save All" })
 
 -- Clear unsaved buffer changes
 vim.keymap.set("n", "<leader>bz", ":e!<CR>", { desc = "Clear Unsaved Buffer Changes" })
