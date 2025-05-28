@@ -29,12 +29,13 @@ vim.keymap.set({ "c", "i" }, "<C-h>", "<Left>", { desc = "Move Cursor Left" })
 vim.keymap.set({ "c", "i" }, "<C-l>", "<Right>", { desc = "Move Cursor Right" })
 
 -- Save all buffers
-vim.keymap.set("n", "<leader>bs", "<cmd>wall<CR>", { desc = "Buffer Save All" })
+vim.keymap.set("n", "<leader>bs", "<cmd>wall<CR>", { desc = "Save All Buffers" })
 
 -- Clear unsaved buffer changes
 vim.keymap.set("n", "<leader>bz", ":e!<CR>", { desc = "Clear Unsaved Buffer Changes" })
 
 -- Search the directory of the current buffer
+vim.keymap.del("n", "<leader>sG")
 vim.keymap.set("n", "<leader>sG", function()
   require("telescope.builtin").live_grep({
     search_dirs = { vim.fn.expand("%:p:h") },
