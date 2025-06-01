@@ -32,7 +32,7 @@ return {
     auto_suggestions = true,
     auto_suggestions_provider = "copilot",
 
-    gemini = {
+    gemini = { -- https://ai.google.dev/gemini-api/docs/models
       model = "gemini-2.5-pro-preview-05-06",
       temperature = 0,
       max_tokens = 4096,
