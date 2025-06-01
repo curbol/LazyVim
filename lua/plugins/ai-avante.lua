@@ -33,7 +33,7 @@ return {
     auto_suggestions_provider = "copilot",
 
     gemini = {
-      model = "gemini-1.5-flash", -- or "gemini-1.5-pro-exp-0827"
+      model = "gemini-2.5-pro-preview-05-06",
       temperature = 0,
       max_tokens = 4096,
     },
