@@ -29,13 +29,31 @@ return {
     },
 
     opts = {
-      provider = "gemini",
+      provider = "claude",
+      cursor_applying_provider = "groq",
+      behaviour = {
+        enable_cursor_planning_mode = true,
+      },
+      providers = {
+        claude = {
+          model = "claude-3-5-sonnet-20240620",
+        },
+        gemini = {
+          model = "gemini-2.5-pro-preview-05-06",
+        },
+        groq = {
+          __inherited_from = "openai",
+          api_key_name = "GROQ_API_KEY",
+          model = "llama-3.3-70b-versatile",
+          endpoint = "https://api.groq.com/openai/v1/",
+          extra_request_body = {
+            max_completion_tokens = 32768, -- increase this value, otherwise it will stop generating halfway
+          },
+        },
+      },
+
       auto_suggestions = true,
       auto_suggestions_provider = "copilot",
-
-      gemini = {
-        model = "gemini-2.5-pro-preview-05-06",
-      },
 
       selector = {
         file_selector_provider = "telescope",
@@ -51,6 +69,27 @@ return {
           vim.notify("Added current buffer to Avante context", vim.log.levels.INFO)
         end,
         desc = "Avante: Add Current Buffer",
+      },
+    },
+  },
+  {
+    "saghen/blink.cmp",
+    dependencies = {
+      "Kaiser-Yang/blink-cmp-avante",
+    },
+    opts = {
+      sources = {
+        -- Add 'avante' to the list
+        default = { "avante", "lsp", "path", "luasnip", "buffer" },
+        providers = {
+          avante = {
+            module = "blink-cmp-avante",
+            name = "Avante",
+            opts = {
+              -- options for blink-cmp-avante
+            },
+          },
+        },
       },
     },
   },
