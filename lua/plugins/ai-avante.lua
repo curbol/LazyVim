@@ -77,21 +77,22 @@ return {
     dependencies = {
       "Kaiser-Yang/blink-cmp-avante",
     },
-    opts = {
-      sources = {
-        -- Add 'avante' to the list
-        default = { "avante", "lsp", "path", "luasnip", "buffer" },
-        providers = {
-          avante = {
-            module = "blink-cmp-avante",
-            name = "Avante",
-            opts = {
-              -- options for blink-cmp-avante
-            },
-          },
-        },
-      },
-    },
+    opts = function(_, opts)
+      opts.sources = opts.sources or {}
+      opts.sources.default = opts.sources.default or {}
+
+      -- Add "avante" if not already present
+      if not vim.tbl_contains(opts.sources.default, "avante") then
+        table.insert(opts.sources.default, 1, "avante") -- insert at the top if desired
+      end
+
+      opts.sources.providers = opts.sources.providers or {}
+      opts.sources.providers.avante = {
+        module = "blink-cmp-avante",
+        name = "Avante",
+        opts = {},
+      }
+    end,
   },
   {
     "nvim-neo-tree/neo-tree.nvim",
