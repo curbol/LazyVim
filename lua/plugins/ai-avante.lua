@@ -30,49 +30,22 @@ return {
 
     opts = {
       provider = "claude",
-      cursor_applying_provider = "groq",
-      behaviour = {
-        enable_cursor_planning_mode = true,
-      },
       providers = {
         claude = {
           model = "claude-sonnet-4-20250514",
         },
-        gemini = {
-          model = "gemini-2.5-pro-preview-05-06",
-        },
-        groq = {
-          __inherited_from = "openai",
-          api_key_name = "GROQ_API_KEY",
-          model = "llama-3.3-70b-versatile",
-          endpoint = "https://api.groq.com/openai/v1/",
-          extra_request_body = {
-            max_completion_tokens = 32768, -- increase this value, otherwise it will stop generating halfway
-          },
-        },
       },
 
-      auto_suggestions = true,
+      -- Using LazyVim Copilot Extra
+      auto_suggestions = false,
       auto_suggestions_provider = "copilot",
 
       selector = {
         file_selector_provider = "telescope",
       },
     },
-
-    keys = {
-      {
-        "<leader>ab",
-        function()
-          local sidebar = require("avante").get(true)
-          sidebar.file_selector:add_current_buffer()
-          vim.notify("Added current buffer to Avante context", vim.log.levels.INFO)
-        end,
-        desc = "Avante: Add Current Buffer",
-      },
-    },
   },
-  {
+  { -- Add completion source for Avante
     "saghen/blink.cmp",
     dependencies = {
       "Kaiser-Yang/blink-cmp-avante",
@@ -90,11 +63,12 @@ return {
       opts.sources.providers.avante = {
         module = "blink-cmp-avante",
         name = "Avante",
+        score_offset = 100, -- Higher priority
         opts = {},
       }
     end,
   },
-  {
+  { -- Add Avante toggle command to Neo-tree
     "nvim-neo-tree/neo-tree.nvim",
     opts = function(_, opts)
       opts.filesystem = opts.filesystem or {}
