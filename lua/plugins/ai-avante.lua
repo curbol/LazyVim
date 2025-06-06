@@ -36,7 +36,7 @@ return {
       },
       providers = {
         claude = {
-          model = "claude-3-5-sonnet-20240620",
+          model = "claude-sonnet-4-20250514",
         },
         gemini = {
           model = "gemini-2.5-pro-preview-05-06",
