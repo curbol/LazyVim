@@ -19,7 +19,7 @@ return {
         function()
           vim.cmd("MCPHub")
         end,
-        desc = "Open MCPHub",
+        desc = "MCPHub",
       },
     },
   },

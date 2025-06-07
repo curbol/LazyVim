@@ -31,14 +31,33 @@ return {
     opts = {
       provider = "claude",
       providers = {
-        claude = {
+        claude4 = {
+          endpoint = "https://api.anthropic.com/v1/messages",
           model = "claude-sonnet-4-20250514",
+          api_key_name = "ANTHROPIC_API_KEY",
+        },
+        groq = {
+          __inherited_from = "openai",
+          api_key_name = "GROQ_API_KEY",
+          endpoint = "https://api.groq.com/openai/v1/",
+          model = "llama-3.3-70b-versatile",
+          extra_request_body = {
+            max_completion_tokens = 32768,
+          },
         },
       },
 
+      cursor_applying_provider = "groq",
+      behaviour = {
+        auto_focus_sidebar = false,
+        enable_cursor_planning_mode = true,
+        auto_apply_diff_after_generation = true,
+        auto_approve_tool_permissions = true,
+      },
+
       -- Using LazyVim Copilot Extra
-      auto_suggestions = false,
-      auto_suggestions_provider = "copilot",
+      -- auto_suggestions = false,
+      -- auto_suggestions_provider = "copilot",
 
       selector = {
         file_selector_provider = "telescope",

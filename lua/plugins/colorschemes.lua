@@ -40,16 +40,16 @@ return {
       }
 
       -- Set custom highlights
-      vim.api.nvim_create_autocmd({ "ColorScheme", "VimEnter" }, {
-        group = vim.api.nvim_create_augroup("Color", {}),
-        pattern = "*",
-        callback = function()
-          -- override color of window bar enabled by `vim.opt.winbar`
-          vim.api.nvim_set_hl(0, "WinBarNC", { bg = "NONE", fg = "#7c6f64" })
-          vim.api.nvim_set_hl(0, "WinBar", { bg = "NONE", fg = "#a89984" })
-        end,
-        desc = "Set custom highlights",
-      })
+      -- vim.api.nvim_create_autocmd({ "ColorScheme", "VimEnter" }, {
+      --   group = vim.api.nvim_create_augroup("Color", {}),
+      --   pattern = "*",
+      --   callback = function()
+      --     -- override color of window bar enabled by `vim.opt.winbar`
+      --     vim.api.nvim_set_hl(0, "WinBarNC", { bg = "NONE", fg = "#7c6f64" })
+      --     vim.api.nvim_set_hl(0, "WinBar", { bg = "NONE", fg = "#a89984" })
+      --   end,
+      --   desc = "Set custom highlights",
+      -- })
     end,
   },
 }
