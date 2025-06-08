@@ -31,6 +31,11 @@ return {
     opts = {
       provider = "claude",
       providers = {
+        claude = {
+          extra_request_body = {
+            max_tokens = 16384, -- Reduced from 20480
+          },
+        },
         claude4 = {
           endpoint = "https://api.anthropic.com/v1/messages",
           model = "claude-sonnet-4-20250514",
@@ -47,10 +52,10 @@ return {
         },
       },
 
-      cursor_applying_provider = "groq",
+      cursor_applying_provider = "groq", -- For planning mode
       behaviour = {
+        enable_cursor_planning_mode = true, -- For planning mode
         auto_focus_sidebar = false,
-        enable_cursor_planning_mode = true,
         auto_apply_diff_after_generation = true,
         auto_approve_tool_permissions = true,
       },
