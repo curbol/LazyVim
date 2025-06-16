@@ -5,4 +5,8 @@ return {
       scroll = { enabled = false },
     },
   },
+  {
+    "akinsho/bufferline.nvim",
+    enabled = false,
+  },
 }
