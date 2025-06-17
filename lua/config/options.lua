@@ -8,7 +8,6 @@ vim.opt.scrolloff = 10
 -- Show filename in top right of buffer
 vim.opt.winbar = "%=%m %f"
 
--- Load VSCode-specific options if in VSCode
 if vim.g.vscode then
   require("config.vscode.options")
   return

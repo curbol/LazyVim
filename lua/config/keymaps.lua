@@ -35,14 +35,13 @@ vim.keymap.set("n", "<leader>bs", "<cmd>wall<CR>", { desc = "Save All Buffers" }
 vim.keymap.set("n", "<leader>bz", ":e!<CR>", { desc = "Clear Unsaved Buffer Changes" })
 
 -- Search the directory of the current buffer
-vim.keymap.del("n", "<leader>sG")
+pcall(vim.keymap.del, "n", "<leader>sG")
 vim.keymap.set("n", "<leader>sG", function()
   require("telescope.builtin").live_grep({
     search_dirs = { vim.fn.expand("%:p:h") },
   })
 end, { desc = "Grep (Buffer Dir)" })
 
--- Load VSCode-specific keymaps if in VSCode
 if vim.g.vscode then
   require("config.vscode.keymaps")
   return

@@ -23,8 +23,6 @@ require("lazy").setup({
     -- Extras Source: https://github.com/LazyVim/LazyVim/tree/main/lua/lazyvim/plugins/extras
     -- import any extras modules here
 
-
-
     --AI
     -- { import = "lazyvim.plugins.extras.ai.copilot-chat" },
     { import = "lazyvim.plugins.extras.ai.copilot" },
@@ -66,7 +64,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.ui.mini-indentscope" },
 
     -- VSCode
-    vim.g.vscode and { import = "lazyvim.plugins.extras.vscode" } or nil,
+    { import = "lazyvim.plugins.extras.vscode" },
 
     -- import/override with your plugins
     { import = "plugins" },

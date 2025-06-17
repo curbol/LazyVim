@@ -1,5 +1,4 @@
 -- VSCode-specific keymaps
--- This file is only loaded when vim.g.vscode is set
 
 if not vim.g.vscode then
   return
@@ -100,14 +99,21 @@ vim.keymap.set("n", "<leader>uz", function()
   vscode.action("workbench.action.toggleZenMode")
 end, { desc = "Toggle Zen Mode" })
 
--- Focus management
-vim.keymap.set("n", "<leader>ww", function()
-  vscode.action("workbench.action.focusNextGroup")
-end, { desc = "Focus Next Editor Group" })
+-- Harpoon keybindings for VSCode
+vim.keymap.set("n", "<leader>h", function()
+  vscode.action("vscode-harpoon.editorQuickPick")
+end, { desc = "Harpoon Quick Pick" })
 
-vim.keymap.set("n", "<leader>wp", function()
-  vscode.action("workbench.action.focusPreviousGroup")
-end, { desc = "Focus Previous Editor Group" })
+vim.keymap.set("n", "<leader>H", function()
+  vscode.action("vscode-harpoon.addEditor")
+end, { desc = "Harpoon Add File" })
+
+-- Jump to harpoon items 1-9 
+for i = 1, 9 do
+  vim.keymap.set("n", "<leader>" .. i, function()
+    vscode.action("vscode-harpoon.gotoEditor" .. i)
+  end, { desc = "Harpoon to File " .. i })
+end
 
 -- Disable problematic default LazyVim keymaps that don't work well in VSCode
 -- Remove LazyVim's default telescope keymaps since we're using VSCode's equivalents
