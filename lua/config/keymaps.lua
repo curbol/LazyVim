@@ -41,3 +41,9 @@ vim.keymap.set("n", "<leader>sG", function()
     search_dirs = { vim.fn.expand("%:p:h") },
   })
 end, { desc = "Grep (Buffer Dir)" })
+
+-- Load VSCode-specific keymaps if in VSCode
+if vim.g.vscode then
+  require("config.vscode.keymaps")
+  return
+end
