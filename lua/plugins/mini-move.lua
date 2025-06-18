@@ -1,6 +1,7 @@
 return {
   "echasnovski/mini.move",
   event = "VeryLazy",
+  vscode = false,
   opts = {
     mappings = {
       -- Move visual selection in Visual mode. Defaults are Alt + hjkl.
@@ -18,8 +19,8 @@ return {
   },
   keys = {
     { mode = { "v" }, "<M-Left>", desc = "Move selection left" },
-    { mode = { "v" }, "<M-Right>", desc = "Move selection down" },
-    { mode = { "v" }, "<M-Down>", desc = "Move selection up" },
-    { mode = { "v" }, "<M-Up>", desc = "Move selection right" },
+    { mode = { "v" }, "<M-Right>", desc = "Move selection right" },
+    { mode = { "v" }, "<M-Down>", desc = "Move selection down" },
+    { mode = { "v" }, "<M-Up>", desc = "Move selection up" },
   },
 }
