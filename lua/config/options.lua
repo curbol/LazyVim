@@ -10,5 +10,4 @@ vim.opt.winbar = "%=%m %f"
 
 if vim.g.vscode then
   require("config.vscode.options")
-  return
 end

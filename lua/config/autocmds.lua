@@ -16,5 +16,4 @@ vim.api.nvim_create_autocmd("BufEnter", {
 
 if vim.g.vscode then
   require("config.vscode.autocmds")
-  return
 end

@@ -44,5 +44,4 @@ end, { desc = "Grep (Buffer Dir)" })
 
 if vim.g.vscode then
   require("config.vscode.keymaps")
-  return
 end
