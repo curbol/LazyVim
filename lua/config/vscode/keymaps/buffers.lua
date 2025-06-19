@@ -14,14 +14,6 @@ vim.keymap.set("n", "<S-l>", function()
   vscode.action("workbench.action.nextEditor")
 end, { desc = "Next Buffer" })
 
-vim.keymap.set("n", "[b", function()
-  vscode.action("workbench.action.previousEditor")
-end, { desc = "Prev Buffer" })
-
-vim.keymap.set("n", "]b", function()
-  vscode.action("workbench.action.nextEditor")
-end, { desc = "Next Buffer" })
-
 -- Buffer management
 vim.keymap.set("n", "<leader>bd", function()
   vscode.action("workbench.action.closeActiveEditor")
