@@ -225,7 +225,7 @@ return {
         { "<leader>d", group = "debug" },
         { "<leader>r", group = "refactor" },
         { "<leader>n", group = "notifications" },
-        { "<leader>m", group = "bookmarks" },
+        { "<leader>m", group = "projects" },
         { "<leader>t", group = "test/tasks" },
         
         -- Git groups
@@ -290,9 +290,12 @@ return {
         { "<leader><tab>]", desc = "Next Tab" },
         { "<leader><tab>[", desc = "Previous Tab" },
         
-        -- Bookmark groups (if bookmarks extension is installed)
-        { "<leader>mm", desc = "Toggle Bookmark" },
-        { "<leader>ml", desc = "List Bookmarks" },
+        -- Project groups
+        { "<leader>ml", desc = "List Projects" },
+        { "<leader>mn", desc = "List Projects (New Window)" },
+        { "<leader>ms", desc = "Save Project" },
+        { "<leader>me", desc = "Edit Projects" },
+        { "<leader>mt", desc = "Filter by Tag" },
         
         -- Notification groups
         { "<leader>nc", desc = "Clear Notifications" },
@@ -610,22 +613,6 @@ return {
           vim.keymap.set("n", "<leader>sr", function()
             vscode.action("workbench.action.replaceInFiles")
           end, { desc = "Search and Replace" })
-          
-          -- ===================================================================
-          -- BOOKMARKS (if bookmarks extension is installed)
-          -- ===================================================================
-          
-          vim.keymap.set("n", "<leader>mm", function()
-            vscode_action("bookmarks.toggle", {
-              callback = function()
-                vim.notify("Bookmark toggled", vim.log.levels.INFO)
-              end
-            })
-          end, { desc = "Toggle Bookmark" })
-          
-          vim.keymap.set("n", "<leader>ml", function()
-            vscode_action("bookmarks.list")
-          end, { desc = "List Bookmarks" })
           
           -- ===================================================================
           -- ZEN MODE AND UI TOGGLES

@@ -142,8 +142,9 @@ end, { desc = "Git Blame Line" })
 
 -- Explorer
 vim.keymap.set("n", "<leader>e", function()
+  -- Always just open/focus the explorer - the VSCode keybinding handles closing when focused
   vscode.action("workbench.view.explorer")
-end, { desc = "Explorer" })
+end, { desc = "Toggle Explorer" })
 
 -- Terminal
 vim.keymap.set("n", "<leader>ft", function()
@@ -263,3 +264,73 @@ vim.keymap.set({ "i", "n", "s" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape
 vim.keymap.set({ "i", "x", "n", "s" }, "<C-s>", function()
   vscode.action("workbench.action.files.save")
 end, { desc = "Save File" })
+
+-- ===================================================================
+-- PROJECT MANAGER (Harpoon-like for projects)
+-- ===================================================================
+
+-- Project list and navigation (similar to harpoon)
+vim.keymap.set("n", "<leader>ml", function()
+  vscode.action("projectManager.listProjects")
+end, { desc = "List Projects" })
+
+vim.keymap.set("n", "<leader>mn", function()
+  vscode.action("projectManager.listProjectsNewWindow")
+end, { desc = "List Projects (New Window)" })
+
+-- Save current project
+vim.keymap.set("n", "<leader>ms", function()
+  vscode.action("projectManager.saveProject")
+end, { desc = "Save Project" })
+
+-- Edit projects file
+vim.keymap.set("n", "<leader>me", function()
+  vscode.action("projectManager.editProjects")
+end, { desc = "Edit Projects" })
+
+-- Filter by tags
+vim.keymap.set("n", "<leader>mt", function()
+  vscode.action("projectManager.filterProjectsByTag")
+end, { desc = "Filter by Tag" })
+
+-- Open folder as new project
+vim.keymap.set("n", "<leader>mf", function()
+  vscode.action("workbench.action.files.openFolder")
+end, { desc = "Open Folder" })
+
+-- Quick project access (numbers like harpoon)
+vim.keymap.set("n", "<leader>m1", function()
+  vscode.action("projectManager.listProjects")
+end, { desc = "Project 1" })
+
+vim.keymap.set("n", "<leader>m2", function()
+  vscode.action("projectManager.listProjects")
+end, { desc = "Project 2" })
+
+vim.keymap.set("n", "<leader>m3", function()
+  vscode.action("projectManager.listProjects")
+end, { desc = "Project 3" })
+
+vim.keymap.set("n", "<leader>m4", function()
+  vscode.action("projectManager.listProjects")
+end, { desc = "Project 4" })
+
+vim.keymap.set("n", "<leader>m5", function()
+  vscode.action("projectManager.listProjects")
+end, { desc = "Project 5" })
+
+vim.keymap.set("n", "<leader>m6", function()
+  vscode.action("projectManager.listProjects")
+end, { desc = "Project 6" })
+
+vim.keymap.set("n", "<leader>m7", function()
+  vscode.action("projectManager.listProjects")
+end, { desc = "Project 7" })
+
+vim.keymap.set("n", "<leader>m8", function()
+  vscode.action("projectManager.listProjects")
+end, { desc = "Project 8" })
+
+vim.keymap.set("n", "<leader>m9", function()
+  vscode.action("projectManager.listProjects")
+end, { desc = "Project 9" })

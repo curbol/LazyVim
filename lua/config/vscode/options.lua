@@ -2,6 +2,10 @@ if not vim.g.vscode then
   return
 end
 
+-- Set leader key explicitly for VSCode
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 -- VSCode-specific options for better integration
 local opt = vim.opt
 
