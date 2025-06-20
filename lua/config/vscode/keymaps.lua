@@ -156,7 +156,11 @@ vim.keymap.set("n", "<leader>ft", function()
   vscode.action("workbench.action.terminal.toggleTerminal")
 end, { desc = "Terminal (Root Dir)" })
 
-vim.keymap.set("n", "<c-/>", function()
+vim.keymap.set("n", "<C-/>", function()
+  vscode.action("workbench.action.terminal.toggleTerminal")
+end, { desc = "Terminal (Root Dir)", silent = true })
+
+vim.keymap.set("n", "<C-`>", function()
   vscode.action("workbench.action.terminal.toggleTerminal")
 end, { desc = "Terminal (Root Dir)" })
 
@@ -372,43 +376,11 @@ vim.keymap.set({ "n", "v" }, "<leader>aa", function()
   vscode.action("workbench.action.chat.toggle")
 end, { desc = "Toggle Chat (CopilotChat)" })
 
-vim.keymap.set({ "n", "v" }, "<leader>ac", function()
-  vscode.action("github.copilot.interactiveEditor.explain")
-end, { desc = "Explain Code (CopilotChat)" })
-
-vim.keymap.set({ "n", "v" }, "<leader>ad", function()
-  vscode.action("github.copilot.interactiveEditor.generateDocs")
-end, { desc = "Generate Docs (CopilotChat)" })
-
-vim.keymap.set({ "n", "v" }, "<leader>aF", function()
-  vscode.action("github.copilot.interactiveEditor.fix")
-end, { desc = "Fix Code (CopilotChat)" })
-
-vim.keymap.set({ "n", "v" }, "<leader>ag", function()
-  vscode.action("github.copilot.generate")
-end, { desc = "Generate Code (CopilotChat)" })
-
 vim.keymap.set({ "n", "v" }, "<leader>ai", function()
   vscode.action("workbench.action.chat.open")
 end, { desc = "Open Chat (CopilotChat)" })
 
-vim.keymap.set({ "n", "v" }, "<leader>ao", function()
-  vscode.action("github.copilot.interactiveEditor.optimize")
-end, { desc = "Optimize Code (CopilotChat)" })
-
-vim.keymap.set({ "n", "v" }, "<leader>ar", function()
-  vscode.action("github.copilot.interactiveEditor.refactor")
-end, { desc = "Refactor Code (CopilotChat)" })
-
-vim.keymap.set({ "n", "v" }, "<leader>as", function()
-  vscode.action("github.copilot.sendChatToInlineChat")
-end, { desc = "Send to Inline Chat (CopilotChat)" })
-
-vim.keymap.set({ "n", "v" }, "<leader>at", function()
-  vscode.action("github.copilot.interactiveEditor.generateTests")
-end, { desc = "Generate Tests (CopilotChat)" })
-
-vim.keymap.set({ "n", "v" }, "<leader>ax", function()
+vim.keymap.set({ "n", "v" }, "<leader>an", function()
   vscode.action("workbench.action.chat.newChat")
 end, { desc = "New Chat (CopilotChat)" })
 
