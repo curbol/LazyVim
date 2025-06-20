@@ -274,6 +274,14 @@ end, { desc = "Save File" })
 -- PROJECT MANAGER (Harpoon-like for projects)
 -- ===================================================================
 
+vim.keymap.set("n", "<leader>mr", function()
+  vscode.action("workbench.action.openRecent")
+end, { desc = "Recent Projects" })
+
+vim.keymap.set("n", "<leader>mf", function()
+  vscode.action("workbench.action.files.openFolder")
+end, { desc = "Open Folder" })
+
 -- Project list and navigation (similar to harpoon)
 vim.keymap.set("n", "<leader>ml", function()
   vscode.action("projectManager.listProjects")
@@ -284,7 +292,7 @@ vim.keymap.set("n", "<leader>mn", function()
 end, { desc = "List Projects (New Window)" })
 
 -- Save current project
-vim.keymap.set("n", "<leader>ms", function()
+vim.keymap.set("n", "<leader>ma", function()
   vscode.action("projectManager.saveProject")
 end, { desc = "Save Project" })
 
@@ -297,11 +305,6 @@ end, { desc = "Edit Projects" })
 vim.keymap.set("n", "<leader>mt", function()
   vscode.action("projectManager.filterProjectsByTag")
 end, { desc = "Filter by Tag" })
-
--- Open folder as new project
-vim.keymap.set("n", "<leader>mf", function()
-  vscode.action("workbench.action.files.openFolder")
-end, { desc = "Open Folder" })
 
 -- Quick project access (numbers like harpoon)
 vim.keymap.set("n", "<leader>m1", function()
@@ -406,8 +409,8 @@ vim.keymap.set({ "n", "v" }, "<leader>at", function()
 end, { desc = "Generate Tests (CopilotChat)" })
 
 vim.keymap.set({ "n", "v" }, "<leader>ax", function()
-  vscode.action("workbench.action.chat.clear")
-end, { desc = "Clear Chat (CopilotChat)" })
+  vscode.action("workbench.action.chat.newChat")
+end, { desc = "New Chat (CopilotChat)" })
 
 vim.keymap.set({ "n", "v" }, "<leader>aq", function()
   vscode.action("workbench.action.quickchat.toggle")
@@ -570,19 +573,6 @@ end, { desc = "Git Push" })
 vim.keymap.set("n", "<leader>gc", function()
   vscode.action("git.commit")
 end, { desc = "Git Commit" })
-
--- Workspace and project management
-vim.keymap.set("n", "<leader>ws", function()
-  vscode.action("workbench.action.files.saveWorkspaceAs")
-end, { desc = "Save Workspace" })
-
-vim.keymap.set("n", "<leader>wo", function()
-  vscode.action("workbench.action.openWorkspace")
-end, { desc = "Open Workspace" })
-
-vim.keymap.set("n", "<leader>fp", function()
-  vscode.action("workbench.action.openRecent")
-end, { desc = "Recent Projects" })
 
 -- Debugging support
 vim.keymap.set("n", "<leader>db", function()
