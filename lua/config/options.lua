@@ -7,7 +7,3 @@ vim.opt.scrolloff = 10
 
 -- Show filename in top right of buffer
 vim.opt.winbar = "%=%m %f"
-
-if vim.g.vscode then
-  require("config.vscode.options")
-end

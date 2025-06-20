@@ -13,7 +13,3 @@ vim.api.nvim_create_autocmd("BufEnter", {
   end,
   desc = "Disable New Line Comment",
 })
-
-if vim.g.vscode then
-  require("config.vscode.autocmds")
-end
