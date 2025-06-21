@@ -29,7 +29,14 @@ vim.keymap.set("n", "]b", function()
   vscode.action("workbench.action.nextEditor")
 end, { desc = "Next Buffer" })
 
--- Window navigation
+-- ===================================================================
+-- SMART WINDOW NAVIGATION (Enhanced)
+-- ===================================================================
+
+-- These will only trigger when in normal Neovim navigation mode
+-- The VSCode keybindings.json handles the smart navigation between different areas
+
+-- Basic window navigation (fallback when not in smart contexts)
 vim.keymap.set("n", "<C-Left>", function()
   vscode.action("workbench.action.focusLeftGroup")
 end, { desc = "Go to Left Window" })
@@ -43,6 +50,36 @@ vim.keymap.set("n", "<C-Up>", function()
 end, { desc = "Go to Upper Window" })
 
 vim.keymap.set("n", "<C-Right>", function()
+  vscode.action("workbench.action.focusRightGroup")
+end, { desc = "Go to Right Window" })
+
+
+-- Maximize editor - close all panels and sidebar
+vim.keymap.set("n", "<leader>wm", function()
+  -- Close sidebar if open
+  vscode.action("workbench.action.closeSidebar")
+  -- Close auxiliary bar (right sidebar) if open  
+  vscode.action("workbench.action.closeAuxiliaryBar")
+  -- Close panel (terminal/problems/output/debug console)
+  vscode.action("workbench.action.closePanel")
+  -- Focus on the editor
+  vscode.action("workbench.action.focusActiveEditorGroup")
+end, { desc = "Maximize Editor" })
+
+-- Window navigation with vim-style hjkl
+vim.keymap.set("n", "<leader><C-h>", function()
+  vscode.action("workbench.action.focusLeftGroup")
+end, { desc = "Go to Left Window" })
+
+vim.keymap.set("n", "<leader><C-j>", function()
+  vscode.action("workbench.action.focusBelowGroup")
+end, { desc = "Go to Lower Window" })
+
+vim.keymap.set("n", "<leader><C-k>", function()
+  vscode.action("workbench.action.focusAboveGroup")
+end, { desc = "Go to Upper Window" })
+
+vim.keymap.set("n", "<leader><C-l>", function()
   vscode.action("workbench.action.focusRightGroup")
 end, { desc = "Go to Right Window" })
 
@@ -135,7 +172,6 @@ end, { desc = "Next Diagnostic" })
 vim.keymap.set("n", "[d", function()
   vscode.action("editor.action.marker.prevInFiles")
 end, { desc = "Prev Diagnostic" })
-
 
 -- Explorer
 vim.keymap.set("n", "<leader>e", function()
@@ -467,6 +503,11 @@ vim.keymap.set("n", "<leader>h", function()
   vscode.action("vscode-harpoon.editorQuickPick")
 end, { desc = "Harpoon Quick Pick" })
 
+vim.keymap.set("n", "<leader>hh", function()
+  vscode.action("vscode-harpoon.editEditors")
+end, { desc = "Edit Harpoon List" })
+
+-- Keep the old leader+H for backward compatibility
 vim.keymap.set("n", "<leader>H", function()
   vscode.action("vscode-harpoon.addEditor")
 end, { desc = "Harpoon File" })
@@ -508,3 +549,155 @@ vim.keymap.set("n", "<leader>9", function()
 end, { desc = "Harpoon to File 9" })
 
 -- ===================================================================
+-- SMART NAVIGATION ENHANCEMENTS
+-- ===================================================================
+
+-- Quick panel toggles with escape back to editor
+vim.keymap.set("n", "<leader>ts", function()
+  vscode.action("workbench.action.toggleSidebarVisibility")
+end, { desc = "Toggle Sidebar" })
+
+vim.keymap.set("n", "<leader>tt", function()
+  vscode.action("workbench.action.terminal.toggleTerminal")
+end, { desc = "Toggle Terminal" })
+
+vim.keymap.set("n", "<leader>tc", function()
+  vscode.action("workbench.action.chat.toggle")
+end, { desc = "Toggle Chat" })
+
+-- Focus specific panels directly
+vim.keymap.set("n", "<leader>fs", function()
+  vscode.action("workbench.view.explorer")
+end, { desc = "Focus File Explorer" })
+
+vim.keymap.set("n", "<leader>fg", function()
+  vscode.action("workbench.view.scm")
+end, { desc = "Focus Git Panel" })
+
+vim.keymap.set("n", "<leader>fd", function()
+  vscode.action("workbench.view.debug")
+end, { desc = "Focus Debug Panel" })
+
+vim.keymap.set("n", "<leader>fx", function()
+  vscode.action("workbench.view.extensions")
+end, { desc = "Focus Extensions Panel" })
+
+-- Smart layout manipulation
+vim.keymap.set("n", "<leader>ws", function()
+  vscode.action("workbench.action.splitEditorDown")
+end, { desc = "Split Window Below" })
+
+vim.keymap.set("n", "<leader>wv", function()
+  vscode.action("workbench.action.splitEditorRight")
+end, { desc = "Split Window Right" })
+
+vim.keymap.set("n", "<leader>wo", function()
+  vscode.action("workbench.action.joinTwoGroups")
+end, { desc = "Close Other Windows" })
+
+-- Quick jump to first/last editor group
+vim.keymap.set("n", "<leader>w1", function()
+  vscode.action("workbench.action.openEditorAtIndex1")
+end, { desc = "Go to Editor Group 1" })
+
+vim.keymap.set("n", "<leader>w2", function()
+  vscode.action("workbench.action.openEditorAtIndex2")
+end, { desc = "Go to Editor Group 2" })
+
+vim.keymap.set("n", "<leader>w3", function()
+  vscode.action("workbench.action.openEditorAtIndex3")
+end, { desc = "Go to Editor Group 3" })
+
+-- Terminal navigation enhancements
+vim.keymap.set("n", "<leader>tn", function()
+  vscode.action("workbench.action.terminal.new")
+end, { desc = "New Terminal" })
+
+vim.keymap.set("n", "<leader>tk", function()
+  vscode.action("workbench.action.terminal.kill")
+end, { desc = "Kill Terminal" })
+
+vim.keymap.set("n", "<leader>tr", function()
+  vscode.action("workbench.action.terminal.rename")
+end, { desc = "Rename Terminal" })
+
+-- Panel size adjustments (matching your Alt+Arrow setup)
+vim.keymap.set("n", "<leader>w+", function()
+  vscode.action("workbench.action.increaseViewHeight")
+end, { desc = "Increase Window Height" })
+
+vim.keymap.set("n", "<leader>w-", function()
+  vscode.action("workbench.action.decreaseViewHeight")
+end, { desc = "Decrease Window Height" })
+
+vim.keymap.set("n", "<leader>w>", function()
+  vscode.action("workbench.action.increaseViewWidth")
+end, { desc = "Increase Window Width" })
+
+vim.keymap.set("n", "<leader>w<", function()
+  vscode.action("workbench.action.decreaseViewWidth")
+end, { desc = "Decrease Window Width" })
+
+-- ===================================================================
+-- SMART NAVIGATION SYSTEM EXPLANATION
+-- ===================================================================
+--[[
+SMART CTRL+ARROW NAVIGATION:
+
+This system provides context-aware navigation similar to smart-splits in Neovim.
+The logic is handled in VSCode keybindings.json and works as follows:
+
+• Ctrl+Left:
+  - From editor → Focus sidebar (if leftmost group)
+  - From terminal/chat → Focus active editor group
+  - From sidebar → Stay in sidebar (no action)
+
+• Ctrl+Right:
+  - From editor → Open/focus chat (if rightmost group)
+  - From sidebar/terminal → Focus active editor group
+  - From chat → Stay in chat (no action)
+
+• Ctrl+Down:
+  - From any context → Focus terminal
+  - From terminal → Focus next terminal pane
+
+• Ctrl+Up:
+  - From terminal → Focus active editor group
+  - From other contexts → Pass through to Neovim for editor navigation
+
+The system uses VSCode's "when" clauses to detect context:
+- editorTextFocus: When in an editor
+- terminalFocus: When in terminal
+- sideBarFocus: When sidebar is focused
+- inChat: When in Copilot Chat
+
+FALLBACK KEYMAPS:
+The Neovim keymaps below provide fallback behavior and additional
+navigation helpers when the smart system doesn't apply.
+--]]
+
+-- Quick panel access (matching VSCode Ctrl+Alt+Number shortcuts)
+vim.keymap.set("n", "<leader>p1", function()
+  vscode.action("workbench.view.explorer")
+end, { desc = "Panel: Explorer" })
+
+vim.keymap.set("n", "<leader>p2", function()
+  vscode.action("workbench.view.search")
+end, { desc = "Panel: Search" })
+
+vim.keymap.set("n", "<leader>p3", function()
+  vscode.action("workbench.view.scm")
+end, { desc = "Panel: Git" })
+
+vim.keymap.set("n", "<leader>p4", function()
+  vscode.action("workbench.view.debug")
+end, { desc = "Panel: Debug" })
+
+vim.keymap.set("n", "<leader>p5", function()
+  vscode.action("workbench.view.extensions")
+end, { desc = "Panel: Extensions" })
+
+-- Universal return to editor (matching Ctrl+0)
+vim.keymap.set("n", "<leader>0", function()
+  vscode.action("workbench.action.focusActiveEditorGroup")
+end, { desc = "Focus Editor Group" })
