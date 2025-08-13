@@ -317,42 +317,6 @@ vim.keymap.set("n", "<leader>me", function()
   vscode.action("projectManager.editProjects")
 end, { desc = "Edit Projects" })
 
-vim.keymap.set("n", "<leader>m1", function()
-  vscode.action("projectManager.listProjects")
-end, { desc = "Project 1" })
-
-vim.keymap.set("n", "<leader>m2", function()
-  vscode.action("projectManager.listProjects")
-end, { desc = "Project 2" })
-
-vim.keymap.set("n", "<leader>m3", function()
-  vscode.action("projectManager.listProjects")
-end, { desc = "Project 3" })
-
-vim.keymap.set("n", "<leader>m4", function()
-  vscode.action("projectManager.listProjects")
-end, { desc = "Project 4" })
-
-vim.keymap.set("n", "<leader>m5", function()
-  vscode.action("projectManager.listProjects")
-end, { desc = "Project 5" })
-
-vim.keymap.set("n", "<leader>m6", function()
-  vscode.action("projectManager.listProjects")
-end, { desc = "Project 6" })
-
-vim.keymap.set("n", "<leader>m7", function()
-  vscode.action("projectManager.listProjects")
-end, { desc = "Project 7" })
-
-vim.keymap.set("n", "<leader>m8", function()
-  vscode.action("projectManager.listProjects")
-end, { desc = "Project 8" })
-
-vim.keymap.set("n", "<leader>m9", function()
-  vscode.action("projectManager.listProjects")
-end, { desc = "Project 9" })
-
 -- ===================================================================
 -- COPILOT CHAT MAPPINGS (matching LazyVim)
 -- ===================================================================
@@ -367,6 +331,7 @@ vim.keymap.set({ "n", "v" }, "<leader>ai", function()
 end, { desc = "Open Chat (CopilotChat)" })
 
 vim.keymap.set({ "n", "v" }, "<leader>an", function()
+  vscode.action("workbench.action.chat.open")
   vscode.action("workbench.action.chat.newChat")
 end, { desc = "New Chat (CopilotChat)" })
 
