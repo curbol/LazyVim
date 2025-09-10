@@ -1,64 +1,4 @@
 return {
-  { -- FIX: Using this for navigation from nvim->wezterm because smart-splits is really laggy for some reason.
-    "letieu/wezterm-move.nvim",
-    keys = {
-      -- Navigation (Vim keys)
-      {
-        "<C-h>",
-        function()
-          require("wezterm-move").move("h")
-        end,
-      },
-      {
-        "<C-j>",
-        function()
-          require("wezterm-move").move("j")
-        end,
-      },
-      {
-        "<C-k>",
-        function()
-          require("wezterm-move").move("k")
-        end,
-      },
-      {
-        "<C-l>",
-        function()
-          require("wezterm-move").move("l")
-        end,
-      },
-
-      -- Navigation (Arrow keys)
-      {
-        "<C-Left>",
-        function()
-          require("wezterm-move").move("h")
-        end,
-        desc = "Wezterm move left (arrow)",
-      },
-      {
-        "<C-Down>",
-        function()
-          require("wezterm-move").move("j")
-        end,
-        desc = "Wezterm move down (arrow)",
-      },
-      {
-        "<C-Up>",
-        function()
-          require("wezterm-move").move("k")
-        end,
-        desc = "Wezterm move up (arrow)",
-      },
-      {
-        "<C-Right>",
-        function()
-          require("wezterm-move").move("l")
-        end,
-        desc = "Wezterm move right (arrow)",
-      },
-    },
-  },
   {
     "mrjones2014/smart-splits.nvim",
     lazy = false,
@@ -122,6 +62,66 @@ return {
           require("smart-splits").resize_right()
         end,
         desc = "Smart-splits: resize right (arrow)",
+      },
+
+      -- Moving between splits (Vim keys)
+      {
+        "<C-h>",
+        function()
+          require("smart-splits").move_cursor_left()
+        end,
+        desc = "Smart-splits: move left",
+      },
+      {
+        "<C-j>",
+        function()
+          require("smart-splits").move_cursor_down()
+        end,
+        desc = "Smart-splits: move down",
+      },
+      {
+        "<C-k>",
+        function()
+          require("smart-splits").move_cursor_up()
+        end,
+        desc = "Smart-splits: move up",
+      },
+      {
+        "<C-l>",
+        function()
+          require("smart-splits").move_cursor_right()
+        end,
+        desc = "Smart-splits: move right",
+      },
+
+      -- Moving between splits (Arrow keys)
+      {
+        "<C-Left>",
+        function()
+          require("smart-splits").move_cursor_left()
+        end,
+        desc = "Smart-splits: move left (arrow)",
+      },
+      {
+        "<C-Down>",
+        function()
+          require("smart-splits").move_cursor_down()
+        end,
+        desc = "Smart-splits: move down (arrow)",
+      },
+      {
+        "<C-Up>",
+        function()
+          require("smart-splits").move_cursor_up()
+        end,
+        desc = "Smart-splits: move up (arrow)",
+      },
+      {
+        "<C-Right>",
+        function()
+          require("smart-splits").move_cursor_right()
+        end,
+        desc = "Smart-splits: move right (arrow)",
       },
 
       -- Swapping buffers (Vim keys)
