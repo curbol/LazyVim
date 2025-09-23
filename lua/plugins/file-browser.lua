@@ -2,7 +2,7 @@ return {
   "nvim-telescope/telescope-file-browser.nvim",
   keys = {
     {
-      "<leader>sB",
+      "<leader>fB",
       ":Telescope file_browser path=%:p:h=%:p:h<cr>",
       desc = "Browse Files",
     },
