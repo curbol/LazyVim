@@ -44,6 +44,18 @@ vim.keymap.set("n", "<leader>sG", function()
   })
 end, { desc = "Grep (Buffer Dir)" })
 
+-- Close all markdown buffers (useful when working with zk notes)
+vim.keymap.set("n", "<leader>bm", function()
+  for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+    if vim.api.nvim_buf_is_loaded(buf) then
+      local filetype = vim.bo[buf].filetype
+      if filetype == "markdown" then
+        vim.api.nvim_buf_delete(buf, { force = false })
+      end
+    end
+  end
+end, { desc = "Close All Markdown Buffers" })
+
 if vim.g.vscode then
   require("config.vscode.keymaps")
 end
