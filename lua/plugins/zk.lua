@@ -53,6 +53,53 @@ return {
           config = {
             cmd = { "zk", "lsp" },
             name = "zk",
+            settings = {
+              ["zk"] = {
+                link = {
+                  completion = {
+                    enabled = true,
+                  },
+                  follow = {
+                    enabled = true,
+                  },
+                },
+                note = {
+                  filename = {
+                    strategy = "title",
+                  },
+                },
+              },
+            },
+            handlers = {
+              ["textDocument/publishDiagnostics"] = function(_, params, ctx)
+                -- Filter out "not found" diagnostics for external links
+                if params.diagnostics then
+                  params.diagnostics = vim.tbl_filter(function(diagnostic)
+                    local message = diagnostic.message or ""
+                    -- Skip diagnostics for external HTTP/HTTPS links
+                    if message:match("not found") then
+                      local uri = params.uri
+                      local bufnr = vim.uri_to_bufnr(uri)
+                      if vim.api.nvim_buf_is_loaded(bufnr) then
+                        local lines = vim.api.nvim_buf_get_lines(
+                          bufnr,
+                          diagnostic.range.start.line,
+                          diagnostic.range["end"].line + 1,
+                          false
+                        )
+                        local line_text = table.concat(lines, "\n")
+                        -- Check if the diagnostic is on an external link
+                        if line_text:match("https?://") then
+                          return false
+                        end
+                      end
+                    end
+                    return true
+                  end, params.diagnostics)
+                end
+                vim.lsp.handlers["textDocument/publishDiagnostics"](_, params, ctx)
+              end,
+            },
           },
           auto_attach = {
             enabled = true,
