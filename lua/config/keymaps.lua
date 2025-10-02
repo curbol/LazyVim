@@ -24,6 +24,9 @@ vim.keymap.set("v", "<leader>cs", [[:<C-u>%s/\V<C-r>"/<C-r>"/gI<Left><Left><Left
   desc = "Change All Occurrences of Visually Selected Text",
 })
 
+-- Paste without copying deleted text in visual mode
+vim.keymap.set("v", "P", [["_dP]], { desc = "Paste Without Overwriting Register" })
+
 -- Use <C-h> and <C-l> to navigate in command mode and insert mode
 vim.keymap.set({ "c", "i" }, "<C-h>", "<Left>", { desc = "Move Cursor Left" })
 vim.keymap.set({ "c", "i" }, "<C-l>", "<Right>", { desc = "Move Cursor Right" })
