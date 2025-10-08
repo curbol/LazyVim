@@ -82,7 +82,7 @@ require("lazy").setup({
   checker = {
     enabled = true, -- check for plugin updates periodically
     notify = true, -- notify on update
-    frequency = 604800, -- check for updates once a week (in seconds: 7 * 24 * 60 * 60)
+    frequency = 86400, -- check for updates once a day (in seconds: 24 * 60 * 60)
   }, -- automatically check for plugin updates
   performance = {
     rtp = {
