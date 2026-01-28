@@ -100,6 +100,7 @@ return {
         function()
           require("smart-splits").move_cursor_left()
         end,
+        mode = { "n", "t" },
         desc = "Smart-splits: move left (arrow)",
       },
       {
@@ -107,6 +108,7 @@ return {
         function()
           require("smart-splits").move_cursor_down()
         end,
+        mode = { "n", "t" },
         desc = "Smart-splits: move down (arrow)",
       },
       {
@@ -114,6 +116,7 @@ return {
         function()
           require("smart-splits").move_cursor_up()
         end,
+        mode = { "n", "t" },
         desc = "Smart-splits: move up (arrow)",
       },
       {
@@ -121,6 +124,7 @@ return {
         function()
           require("smart-splits").move_cursor_right()
         end,
+        mode = { "n", "t" },
         desc = "Smart-splits: move right (arrow)",
       },
 
