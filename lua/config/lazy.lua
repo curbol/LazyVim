@@ -38,8 +38,8 @@ require("lazy").setup({
     -- Editor
     { import = "lazyvim.plugins.extras.editor.harpoon2" },
     { import = "lazyvim.plugins.extras.editor.inc-rename" },
+    { import = "lazyvim.plugins.extras.editor.mini-files" },
     { import = "lazyvim.plugins.extras.editor.refactoring" },
-    { import = "lazyvim.plugins.extras.editor.telescope" },
 
     -- Lang
     { import = "lazyvim.plugins.extras.lang.clangd" },
