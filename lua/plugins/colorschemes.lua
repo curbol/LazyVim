@@ -25,7 +25,7 @@ return {
       -- vim.g.gruvbox_material_spell_foreground = "none"
       -- vim.g.gruvbox_material_ui_contrast = "low"
       -- vim.g.gruvbox_material_show_eob = 1
-      vim.g.gruvbox_material_float_style = "dim"
+      vim.g.gruvbox_material_float_style = "blend"
       vim.g.gruvbox_material_diagnostic_text_highlight = 1
       -- vim.g.gruvbox_material_diagnostic_line_highlight = 0
       vim.g.gruvbox_material_diagnostic_virtual_text = "colored"
@@ -34,10 +34,6 @@ return {
       -- vim.g.gruvbox_material_statusline_style = "default"
       -- vim.g.gruvbox_material_lightline_disable_bold = 0
       vim.g.gruvbox_material_better_performance = 1
-      vim.g.gruvbox_material_colors_override = {
-        -- override background color of popup menus and floating windows
-        bg_dim = { "#32302f", "236" }, -- default: { "#1b1b1b", "233" }
-      }
     end,
   },
 }
