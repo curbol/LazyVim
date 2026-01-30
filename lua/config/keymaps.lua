@@ -42,8 +42,8 @@ vim.keymap.set("n", "<leader>bz", ":e!<CR>", { desc = "Clear Unsaved Buffer Chan
 -- Search the directory of the current buffer
 pcall(vim.keymap.del, "n", "<leader>sG")
 vim.keymap.set("n", "<leader>sG", function()
-  require("telescope.builtin").live_grep({
-    search_dirs = { vim.fn.expand("%:p:h") },
+  Snacks.picker.grep({
+    dirs = { vim.fn.expand("%:p:h") },
   })
 end, { desc = "Grep (Buffer Dir)" })
 

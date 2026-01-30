@@ -38,9 +38,9 @@ return {
       {
         "<leader>sz",
         function()
-          require("telescope.builtin").live_grep({
+          Snacks.picker.grep({
             cwd = vim.env.ZK_NOTEBOOK_DIR,
-            prompt_title = "Grep Notes",
+            title = "Grep Notes",
           })
         end,
         desc = "Grep Notes",
@@ -48,7 +48,7 @@ return {
     },
     config = function()
       require("zk").setup({
-        picker = "telescope",
+        picker = "snacks_picker",
         lsp = {
           config = {
             cmd = { "zk", "lsp" },
