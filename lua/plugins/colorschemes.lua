@@ -34,6 +34,14 @@ return {
       -- vim.g.gruvbox_material_statusline_style = "default"
       -- vim.g.gruvbox_material_lightline_disable_bold = 0
       vim.g.gruvbox_material_better_performance = 1
+
+      -- Force a visible FloatBorder after colorscheme loads
+      vim.api.nvim_create_autocmd("ColorScheme", {
+        pattern = "gruvbox-material",
+        callback = function()
+          vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#a89984" })
+        end,
+      })
     end,
   },
 }

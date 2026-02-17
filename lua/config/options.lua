@@ -5,6 +5,9 @@
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+-- Add borders to all floating windows
+vim.o.winborder = "rounded"
+
 -- Show filename in top right of buffer
 -- vim.opt.winbar = "%=%m %f"
 

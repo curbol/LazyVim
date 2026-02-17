@@ -1,6 +1,11 @@
 return {
   "folke/snacks.nvim",
   opts = {
+    styles = {
+      float = {
+        border = "rounded",
+      },
+    },
     picker = {
       sources = {
         explorer = {
