@@ -59,6 +59,18 @@ vim.keymap.set("n", "<leader>bm", function()
   end
 end, { desc = "Close All Markdown Buffers" })
 
+-- Window navigation (ctrl+arrows)
+vim.keymap.set("n", "<C-Left>",  "<C-w>h", { desc = "Go to left window" })
+vim.keymap.set("n", "<C-Right>", "<C-w>l", { desc = "Go to right window" })
+vim.keymap.set("n", "<C-Up>",    "<C-w>k", { desc = "Go to upper window" })
+vim.keymap.set("n", "<C-Down>",  "<C-w>j", { desc = "Go to lower window" })
+
+-- Window move/swap (ctrl+shift+arrows)
+vim.keymap.set("n", "<C-S-Left>",  "<C-w>H", { desc = "Move window far left" })
+vim.keymap.set("n", "<C-S-Right>", "<C-w>L", { desc = "Move window far right" })
+vim.keymap.set("n", "<C-S-Up>",    "<C-w>K", { desc = "Move window far up" })
+vim.keymap.set("n", "<C-S-Down>",  "<C-w>J", { desc = "Move window far down" })
+
 if vim.g.vscode then
   require("config.vscode.keymaps")
 end
