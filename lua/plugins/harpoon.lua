@@ -1,8 +1,7 @@
 return {
   "ThePrimeagen/harpoon",
   branch = "harpoon2",
-  keys = function()
-    local keys = {}
+  keys = function(_, keys)
     for i = 1, 9 do
       table.insert(keys, {
         "<C-" .. i .. ">",
