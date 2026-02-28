@@ -8,6 +8,9 @@ return {
     },
     picker = {
       sources = {
+        files = {
+          hidden = true,
+        },
         explorer = {
           win = {
             list = {
