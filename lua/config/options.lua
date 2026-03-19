@@ -11,3 +11,5 @@ vim.o.winborder = "rounded"
 -- Show filename in top right of buffer
 -- vim.opt.winbar = "%=%m %f"
 
+vim.opt.relativenumber = false
+
