@@ -2,7 +2,7 @@ return {
   "mrjones2014/smart-splits.nvim",
   event = "VeryLazy",
   opts = {
-    cursor_follows_swapped_bufs = true,
+    swap = { move_cursor = true },
   },
   keys = {
     { "<C-S-Left>",  function() require("smart-splits").swap_buf_left() end,  desc = "Move window left" },
